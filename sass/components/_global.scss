@@ -1,0 +1,56 @@
+//Variables
+$color-primary: #f6f2d4;
+$color-secondary: #5584ac;
+$color-emphasis: #22577e;
+$color-background: #95d1cc;
+$font-normal: "Lato", sans-serif;
+$font-emphasis: "Oswald", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $color-background;
+}
+
+//Mixins
+
+@mixin titulos($fuente) {
+  @if $fuente ==$font-normal {
+    font-family: $font-normal;
+  } @else {
+    font-family: $font-emphasis;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+@mixin flexProperties($direction, $jContent, $aItems, $width, $padding: 0px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jContent;
+  align-items: $aItems;
+  width: $width;
+  padding: $padding;
+}
+
+//Functions
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  line-height: calculateRem($size) * 1.5;
+}

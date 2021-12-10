@@ -1,0 +1,19 @@
+extend components/head.pug
+block content
+    .card
+        .card__header
+            .card__container
+                img(class="card__avatar" src="../../assets/img1.jpg" alt="something")
+            .card__description
+                p.card__description--title Leda Huerta
+                p.card__description--text React Developer
+        .card__content
+            img(src="../../assets/img2.jpg", alt="something")
+            p.card__content--text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod quia cupiditate dolor architecto ipsum debitis!
+        .card__footer
+            .action
+                a.action__button Portafolio
+                a.action__button Github
+            .media
+                span: i.fas.fa-heart
+                span: i.fas.fa-share-alt
